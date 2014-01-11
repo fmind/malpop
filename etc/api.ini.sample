@@ -1,0 +1,7 @@
+# Remember that the public API can only be used for non-commercial purposes,
+# always with the idea of helping the community in mind.
+# Remember also that it is restricted to 4 requests of any nature per minute.
+[VirusTotal]
+scan_url    = https://www.virustotal.com/vtapi/v2/file/scan
+report_url  = https://www.virustotal.com/vtapi/v2/file/report
+key         = <your API key>

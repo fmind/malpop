@@ -1,4 +1,6 @@
 *.py[cod]
 *.gz
+redis*
+*.kdev4
 sample/
-
+etc/api.ini
