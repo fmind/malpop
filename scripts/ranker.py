@@ -125,7 +125,7 @@ class Ranker(object):
                 print "%s already exists (skipped)" % md5
                 continue
 
-            # try to add the value
+            # try to retrieve the scan until it works
             while not passed:
                 try:
                     res = self.test_md5(md5, False)
@@ -134,6 +134,7 @@ class Ranker(object):
                     print "%s for %s (Sleeping for 10s)" % (e, md5)
                     sleep(10)
 
+            # save in redis
             self.redis.hset(self.REDIS_HASHSET, md5, res)
             print "Hash set: %s" % md5
 
@@ -153,11 +154,3 @@ if __name__ == '__main__':
     r = Ranker(scripted=True)
     r.parse(sys.argv[1:])
     r.dispatch()
-
-"""
-import networkx as nx
-g = nx.Graph()
-g.add_node(v)
-g.add_edge(v, md5)
-nx.write_gefx(g, 'file.gexf')
-"""
