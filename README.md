@@ -1,9 +1,11 @@
-malware-popularity-classifier
-=============================
+# MalPOP
 
-Classifier of malware popularity (detection rate by VirusTotal)
+## Rationale
 
-dump.rdb is a redit dump with 125 scan results.
+You don't know which malware family to analyze from your dataset ?
 
-TODO:
-- create a graph file (gfx)
+This script helps you select the most popular family from VirusTotal.
+
+## NOTES
+
+dump.rdb is a reddis dump that contains 125 scan results.
